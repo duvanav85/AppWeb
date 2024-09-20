@@ -1,0 +1,16 @@
+<div class="mx-auto grid grid-cols-12 gap-8 bg-zinc-50 p-1">
+
+  <div class="header col-span-12 rounded-lg border border-gray-100 bg-gray-200 py-8">
+    <h1 class="title">Employees</h1>
+  </div> 
+
+  <div class="col-span-12 style= margin-bottom: 1.5rem;">
+    <!-- <app-modal-search-employee-component (setDataFiltro)="addFilter($event)" (downloadRequested)="getAccountsDownload()"/> -->
+  </div>
+
+  @if(employee | async; as result){
+    <div class="col-span-12">
+      <!-- <app-table-employee-componentes [dataSource]="result" (sendDataPagination)="addPagination($event)"/> -->
+    </div>
+  }
+</div>
