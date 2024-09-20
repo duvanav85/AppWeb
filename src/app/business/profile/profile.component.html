@@ -4,13 +4,13 @@
     <h1 class="title">Employees</h1>
   </div> 
 
-  <div class="col-span-12 style= margin-bottom: 1.5rem;">
-    <!-- <app-modal-search-employee-component (setDataFiltro)="addFilter($event)" (downloadRequested)="getAccountsDownload()"/> -->
+  <div class="col-span-12">
+    <app-modal-search-employee-component (setDataFiltro)="addFilter($event)" (downloadRequested)="getprofileDownload()"></app-modal-search-employee-component>
   </div>
 
   @if(employee | async; as result){
     <div class="col-span-12">
-      <!-- <app-table-employee-componentes [dataSource]="result" (sendDataPagination)="addPagination($event)"/> -->
+      <app-table-employee-componentes [dataSource]="result" (sendDataPagination)="addPagination($event)"></app-table-employee-componentes>
     </div>
   }
 </div>

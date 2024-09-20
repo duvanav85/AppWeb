@@ -1,1 +1,54 @@
-<p>table-employee-componentes works!</p>
+<div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
+    <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
+        <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
+            <div>
+                <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">Projects</h6>
+            </div>
+        </div>
+    </div>
+    @if (dataSource.data && dataSource.data.length > 0) {
+        <div class="p-6 overflow-x-scroll px-0 pt-0 pb-2">
+            <table cdk-table [dataSource]="dataSource.data!">
+                <!-- Identificacion Column -->
+                <ng-container cdkColumnDef="Identificacion">
+                <th cdk-header-cell *cdkHeaderCellDef> Identificacion </th>
+                <td cdk-cell *cdkCellDef="let element"> {{element.identificicacion}} </td>
+                </ng-container>
+            
+                <!-- Nombres Column -->
+                <ng-container cdkColumnDef="Nombres">
+                <th cdk-header-cell *cdkHeaderCellDef> Nombres </th>
+                <td cdk-cell *cdkCellDef="let element"> {{element.nombre}} </td>
+                </ng-container>
+            
+                <!-- Posicion Column -->
+                <ng-container cdkColumnDef="Posicion">
+                <th cdk-header-cell *cdkHeaderCellDef> Posicion </th>
+                <td cdk-cell *cdkCellDef="let element"> {{element.posicion}} </td>
+                </ng-container>
+            
+                <!-- Descripcion Column -->
+                <ng-container cdkColumnDef="Descripcion">
+                <th cdk-header-cell *cdkHeaderCellDef> Descripcion </th>
+                <td cdk-cell *cdkCellDef="let element"> {{element.descripcion}} </td>
+                </ng-container>
+
+                <!-- Estado Column -->
+                <ng-container cdkColumnDef="Estado">
+                    <th cdk-header-cell *cdkHeaderCellDef> Estado </th>
+                    <td cdk-cell *cdkCellDef="let element"> {{element.estado}} </td>
+                </ng-container>
+
+                <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+                <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    }
+    @if (!dataSource.data || dataSource.data.length === 0) {
+        <div>
+          <p class="result-card__empty-message">
+            No hay registros disponibles.
+          </p>
+        </div>
+    }
+</div>

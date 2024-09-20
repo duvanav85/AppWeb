@@ -2,7 +2,6 @@ export interface ApiResponse<T> {
     errors?     : string[];
     message?    : string;
     succeeded?  : boolean;
-  
     data?: T;
   }
   

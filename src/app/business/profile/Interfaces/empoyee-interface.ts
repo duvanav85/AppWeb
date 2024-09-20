@@ -8,12 +8,11 @@ export interface IEmployee{
     estado               :    boolean;   
 }
 
-export interface AccountFilter extends PaginationFilter {
-    childDisplayName? : string;
-    childEnable?      : string;  //"all", "true", "false"
-    childOwnerId?     : string;
-    displayName?      : string;
-    enable?           : string;  //"all", "true", "false"
-    ownerId?          : string;
-  }
+export interface EmployeeFilter extends PaginationFilter {
+    identificicacion? : number;
+    nombre?           : string; 
+    posicion?         : number;
+    descripcion?      : string;
+    estado?           : string;  //"all", "true", "false"
+}
   
